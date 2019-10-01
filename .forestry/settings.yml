@@ -65,3 +65,4 @@ build:
   preview_docker_image: node:10
   mount_path: "/srv"
   instant_preview_command: npm run develop
+  working_dir: "/srv"
