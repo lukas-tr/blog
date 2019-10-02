@@ -9,4 +9,4 @@ menus:
 template: page
 
 ---
-I am a software developer from Austria**.** 
+I am currently attending the College for Software Engineering in Perg, Austria. I have been using many different technologies and I love exploring even more new ones. When I'm not inside my IDE or text editor, I like to play video games, watch movies or go jogging.
