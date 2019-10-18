@@ -2,6 +2,18 @@ module.exports = {
     pathPrefix: '/',
     siteMetadata: require('./site-metadata.json'),
     plugins: [
+        {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+                exclude: [`/admin`]
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+                policy: [{ userAgent: '*', allow: '/' }]
+            }
+        },
         `gatsby-plugin-react-helmet`,
         `gatsby-source-data`,
         {
@@ -27,7 +39,7 @@ module.exports = {
         {
             resolve: `gatsby-remark-page-creator`,
             options: {
-                
+
             }
         },
         {

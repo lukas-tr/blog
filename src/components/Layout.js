@@ -8,15 +8,74 @@ import Footer from './Footer';
 
 export default class Body extends React.Component {
     render() {
+        const description = _.get(this.props, 'pageContext.site.siteMetadata.description');
+        const title = (_.get(this.props, 'pageContext.frontmatter.title') && (_.get(this.props, 'pageContext.frontmatter.title') + ' - ')) + _.get(this.props, 'pageContext.site.siteMetadata.title');
+        const author = _.get(this.props, 'pageContext.site.siteMetadata.author');
+        const image = _.get(this.props, 'pageContext.site.siteMetadata.image');
+        const url = _.get(this.props, 'pageContext.site.siteMetadata.siteUrl');
         return (
             <React.Fragment>
-                <Helmet>
-                    <title>{_.get(this.props, 'pageContext.frontmatter.title') && _.get(this.props, 'pageContext.frontmatter.title') + ' - '}{_.get(this.props, 'pageContext.site.siteMetadata.title')}</title>
+                <Helmet
+                    script={[{
+                        type: "application/ld+json",
+                        innerHTML: JSON.stringify(
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "WebSite",
+                                "url": url,
+                                // "logo": "http://www.example.com/images/logo.png"
+                            }
+                        )
+                    }]}
+                >
+                    <title>{title}</title>
                     <meta charSet="utf-8"/>
                     <meta name="viewport" content="width=device-width, initialScale=1.0" />
                     <meta name="google" content="notranslate" />
                     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet"/>
                     <link rel="stylesheet" href={safePrefix('assets/css/main.css')}/>
+                    {[
+                      {
+                        name: `description`,
+                        content: description,
+                      },
+                      {
+                        property: `og:title`,
+                        content: title,
+                      },
+                      {
+                        property: `og:description`,
+                        content: description,
+                      },
+                      {
+                        property: `og:type`,
+                        content: `website`,
+                      },
+                      {
+                        property: `og:image`,
+                        content: image,
+                      },
+                      {
+                        name: `twitter:card`,
+                        content: `summary`,
+                      },
+                      {
+                        name: `twitter:creator`,
+                        content: author,
+                      },
+                      {
+                        name: `twitter:title`,
+                        content: title,
+                      },
+                      {
+                        name: `twitter:description`,
+                        content: description,
+                      },
+                      {
+                        name: `twitter:image`,
+                        content: image,
+                      }
+                    ].map((m, idx)=> <meta key={idx} name={m.name} property={m.property} content={m.content}></meta>)}
                 </Helmet>
                 <div id="page" className={'site style-' + _.get(this.props, 'pageContext.site.siteMetadata.layout_style') + ' palette-' + _.get(this.props, 'pageContext.site.siteMetadata.palette')}>
                   <Header {...this.props} />

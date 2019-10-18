@@ -1,5 +1,9 @@
 {
   "title": "Lukas Troyer's Blog",
+  "description": "My thoughts on software engineering, programming and everything around computers.",
+  "author": "Lukas Troyer",
+  "siteUrl": "https://blog.lukastroyer.com/",
+  "image": "https://blog.lukastroyer.com/images/36337818.png",
   "layout_style": "overflow",
   "palette": "blue",
   "header": {
