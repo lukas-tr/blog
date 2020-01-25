@@ -37,4 +37,4 @@ fields:
   config:
     required: true
 pages:
-- src/pages/posts/the-ride-in-the-woods.md
+- src/pages/posts/graphql-client-and-server.md

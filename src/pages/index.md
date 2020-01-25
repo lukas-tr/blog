@@ -28,7 +28,7 @@ sections:
   section_id: recent-posts
   actions:
   - label: View Blog
-    url: blog/index.html
+    url: blog/
   component: PostsBlock
   num_posts_displayed: 4
 menus:
