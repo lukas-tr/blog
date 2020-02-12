@@ -10,7 +10,7 @@
       "type": "rss",
       "title": "RSS Feed",
       "icon": "fas fa-rss",
-      "url": "https://blog.lukastroyer.com/rss"
+      "url": "https://blog.lukastroyer.com/rss.xml"
     }
   ]
 }
