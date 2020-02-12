@@ -34,6 +34,10 @@ export default class Body extends React.Component {
                     <meta name="google" content="notranslate" />
                     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet"/>
                     <link rel="stylesheet" href={safePrefix('assets/css/main.css')}/>
+                    {/* RSS auto discovery */}
+                    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.lukastroyer.com/rss.xml"></link>
+                    {/* fontawesome icons */}
+                    <link rel="stylesheet" href={safePrefix('assets/css/all.css')}/>
                     {[
                       {
                         name: `description`,

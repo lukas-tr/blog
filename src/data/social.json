@@ -3,8 +3,14 @@
     {
       "type": "github",
       "title": "GitHub",
-      "icon": "fa-github",
+      "icon": "fab fa-github",
       "url": "https://github.com/lukas-tr"
+    },
+    {
+      "type": "rss",
+      "title": "RSS Feed",
+      "icon": "fas fa-rss",
+      "url": "https://blog.lukastroyer.com/rss"
     }
   ]
 }
